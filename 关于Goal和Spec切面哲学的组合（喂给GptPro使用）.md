@@ -417,9 +417,9 @@ Example:
 
 仅当以下交付物全部存在时，此目标才算完成：
 
-- D1: <具体产物，例如某个功能、接口、页面、测试、文档>
-- D2: <具体产物>
-- D3: <具体产物>
+- De1: <具体产物，例如某个功能、接口、页面、测试、文档>
+- De2: <具体产物>
+- De3: <具体产物>
 
 ### 0.3 成功标准 Success Criteria
 
@@ -514,7 +514,7 @@ Example:
 
 保持需求【清晰、可拆分】、稳定且可测试。
 
-### R1 — <需求名称>
+### Rqmt1 — <需求名称>
 
 The system shall <required behavior>.
 
@@ -532,7 +532,7 @@ The system shall <required behavior>.
 
 ---
 
-### R2 — <需求名称>
+### Rqmt2 — <需求名称>
 
 The system shall <required behavior>.
 
@@ -549,7 +549,7 @@ Evidence Required:
 
 ---
 
-### R3 — 【兼容性/回归】需求
+### Rqmt3 — 【兼容性/回归】需求
 
 The system shall preserve <existing behavior>.
 
@@ -610,13 +610,13 @@ Migration required:
 - No
 - Yes: <migration notes>
 
-### 3.4 错误与边界情况处理
+### 3.4 Error&Edge Case 错误与边界情况处理 
 
 系统必须处理：
 
-- E1: IF <failure condition>, THEN <safe behavior>.
-- E2: IF <invalid input>, THEN <error / fallback / no-op>.
-- E3: IF <external dependency unavailable>, THEN <safe behavior>.
+- Eec1: IF <failure condition>, THEN <safe behavior>.
+- Eec2: IF <invalid input>, THEN <error / fallback / no-op>.
+- Eec3: IF <external dependency unavailable>, THEN <safe behavior>.
 
 ### 3.5 【回滚/恢复】路径
 
@@ -627,7 +627,7 @@ Migration required:
 
 ---
 
-## 4. 任务计划Task Plan
+## 4. 任务计划 Task Plan
 
 The agent should execute tasks in order unless a task is blocked.
 
@@ -636,11 +636,13 @@ The agent should execute tasks in order unless a task is blocked.
 ---
 
 以下均为样例的【个例示例】，非固定流程。
+但需要遵从以下格式：
+- 1、特别是【CheckBox】的未开始、进行中、已完成，这样的形式。
 
-### [ ] T1 — 检查当前行为
+### [ ] Task1 — 检查当前行为
 
 状态Status: [ ] Todo  
-覆盖范围Covers: Context, R3  
+覆盖范围Covers: Context, Rqmt3  
 依赖项Depends On: none  
 
 执行Do:
@@ -663,15 +665,15 @@ The agent should execute tasks in order unless a task is blocked.
 
 ---
 
-### [ ] T2 — 实现CoreChange
+### [ ] Task2 — 实现CoreChange
 
 Status: [ ] Todo  
-Covers: R1  
-Depends On: T1  
+Covers: Rqmt1  
+Depends On: Task1  
 
 Do:
 
-- [ ] implement the smallest core behavior for R1
+- [ ] implement the smallest core behavior for Rqmt1
 - [ ] keep compatibility intact
 - [ ] avoid unrelated refactors
 
@@ -688,11 +690,11 @@ Evidence:
 
 ---
 
-### [ ] T3 — Implement Secondary / Edge Behavior
+### [ ] Task3 — Implement Secondary / Edge Behavior
 
 Status: [ ] Todo  
-Covers: R2, error behavior  
-Depends On: T2  
+Covers: Rqmt2, error behavior  
+Depends On: Task2  
 
 Do:
 
@@ -713,11 +715,11 @@ Evidence:
 
 ---
 
-### [ ] T4 — Add or Update Tests
+### [ ] Task4 — Add or Update Tests
 
 Status: [ ] Todo  
-Covers: R1, R2, R3  
-Depends On: T2, T3  
+Covers: Rqmt1, Rqmt2, Rqmt3  
+Depends On: Task2, Task3  
 
 Do:
 
@@ -738,11 +740,11 @@ Evidence:
 
 ---
 
-### [ ] T5 — Documentation / Notes
+### [ ] Task5 — Documentation / Notes
 
 Status: [ ] Todo  
 Covers: final deliverables  
-Depends On: T4  
+Depends On: Task4  
 
 Do:
 
@@ -781,17 +783,17 @@ Do not mark complete based only on:
 
 | 交付物 | 证据 | 状态 |
 |---|---|---|
-| D1 | <file / command / test / behavior> | Pending |
-| D2 | <file / command / test / behavior> | Pending |
-| D3 | <file / command / test / behavior> | Pending |
+| De1 | <file / command / test / behavior> | Pending |
+| De2 | <file / command / test / behavior> | Pending |
+| De3 | <file / command / test / behavior> | Pending |
 
 ### 5.2 需求审计 Requirement Audit
 
 | 需求 Requirement | 验收标准 Acceptance Criteria | 证据 Evidence | Status |
 |---|---|---|---|
-| R1 | AC1.1, AC1.2 | <test / command / file> | Pending |
-| R2 | AC2.1, AC2.2 | <test / command / file> | Pending |
-| R3 | AC3.1, AC3.2 | <regression evidence> | Pending |
+| Rqmt1 | AC1.1, AC1.2 | <test / command / file> | Pending |
+| Rqmt2 | AC2.1, AC2.2 | <test / command / file> | Pending |
+| Rqmt3 | AC3.1, AC3.2 | <regression evidence> | Pending |
 
 ### 5.3 回归审计 Regression Audit
 
@@ -836,7 +838,7 @@ Status:
 Done | Partial | Blocked | Reverted
 
 涉及的任务 Tasks touched:
-- <T1/T2/T3/T4/T5>
+- <Task1/Task2/Task3/Task4/Task5>
 
 Files inspected:
 - `<path>`
