@@ -1,6 +1,5 @@
-
 ```folder-overview
-id: 68d33608-147c-4eed-9598-de34bd152517
+id: 1f896eaf-3a3b-4d47-bb3f-fac796673df2
 folderPath: Path of folder linked to the file
 title: "{{folderName}} overview"
 showTitle: false
@@ -27,6 +26,3 @@ fmtpIntegration: false
 titleSize: 1
 isInCallout: false
 ```
-
-
-- 1
