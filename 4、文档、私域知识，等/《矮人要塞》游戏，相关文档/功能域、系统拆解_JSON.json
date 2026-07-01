@@ -1,0 +1,236 @@
+{
+  "metadata": {
+    "title": "Dwarf-Fortress-like Web Game Feature Map v0",
+    "date": "2026-07-01",
+    "purpose": "Clean-room functional taxonomy for web implementation"
+  },
+  "domains": [
+    {
+      "id": "world_generation",
+      "name": "World Generation",
+      "priority": "P1",
+      "subsystems": [
+        "seeded RNG",
+        "region map",
+        "elevation/rainfall/drainage/temperature",
+        "biomes",
+        "rivers/lakes/oceans/volcanoes",
+        "geology/minerals/aquifers",
+        "civilizations/sites",
+        "historical figures/events",
+        "legends export"
+      ]
+    },
+    {
+      "id": "tile_map",
+      "name": "3D Tile Map",
+      "priority": "P0",
+      "subsystems": [
+        "z-levels",
+        "terrain types",
+        "constructions",
+        "buildings",
+        "items on tile",
+        "creatures on tile",
+        "fluids",
+        "temperature",
+        "outside/light/subterranean flags",
+        "pathfinding passability"
+      ]
+    },
+    {
+      "id": "job_engine",
+      "name": "Jobs, Labor, Skills",
+      "priority": "P0",
+      "subsystems": [
+        "designations",
+        "workshop tasks",
+        "manager work orders",
+        "zone-generated jobs",
+        "need-generated jobs",
+        "labor permissions",
+        "skill xp",
+        "resource reservation",
+        "job cancellation reasons"
+      ]
+    },
+    {
+      "id": "logistics",
+      "name": "Stockpiles and Hauling",
+      "priority": "P0",
+      "subsystems": [
+        "stockpile filters",
+        "hauling jobs",
+        "containers",
+        "take/give links",
+        "wheelbarrows",
+        "forbid/dump/melt/trade flags",
+        "pathing optimization"
+      ]
+    },
+    {
+      "id": "economy_industry",
+      "name": "Industry and Production Chains",
+      "priority": "P0-P1",
+      "subsystems": [
+        "wood industry",
+        "stone industry",
+        "farming",
+        "brewing",
+        "cooking",
+        "animal husbandry",
+        "butchery/tanning/leather",
+        "textiles",
+        "metal smelting/forging/alloys",
+        "glass/clay/soap",
+        "quality/value"
+      ]
+    },
+    {
+      "id": "creatures_psychology",
+      "name": "Creatures, Needs, Thoughts, Stress",
+      "priority": "P1",
+      "subsystems": [
+        "species/caste",
+        "body parts/tissues",
+        "attributes",
+        "skills",
+        "personality traits",
+        "values/preferences",
+        "needs/focus",
+        "thoughts/emotions",
+        "memories/stress",
+        "relationships"
+      ]
+    },
+    {
+      "id": "rooms_locations",
+      "name": "Rooms, Zones, Locations",
+      "priority": "P1",
+      "subsystems": [
+        "bedrooms",
+        "dining rooms",
+        "offices",
+        "tombs",
+        "meeting areas",
+        "taverns",
+        "temples",
+        "libraries",
+        "guildhalls",
+        "hospitals",
+        "room value"
+      ]
+    },
+    {
+      "id": "administration",
+      "name": "Nobles, Justice, Diplomacy",
+      "priority": "P1-P2",
+      "subsystems": [
+        "expedition leader/mayor",
+        "manager",
+        "bookkeeper",
+        "broker",
+        "sheriff/captain of guard",
+        "messenger",
+        "mandates",
+        "demands",
+        "jails/punishment",
+        "diplomatic missions"
+      ]
+    },
+    {
+      "id": "combat_military",
+      "name": "Military and Combat",
+      "priority": "P1",
+      "subsystems": [
+        "squads",
+        "uniforms/equipment",
+        "schedules",
+        "barracks",
+        "training",
+        "melee combat",
+        "ranged combat",
+        "wounds",
+        "armor/material interactions",
+        "sieges"
+      ]
+    },
+    {
+      "id": "healthcare",
+      "name": "Healthcare",
+      "priority": "P1-P2",
+      "subsystems": [
+        "hospital location",
+        "recover wounded",
+        "diagnosis",
+        "cleaning",
+        "surgery",
+        "suturing",
+        "bone setting",
+        "dressing wounds",
+        "traction",
+        "crutches/splints/casts/soap"
+      ]
+    },
+    {
+      "id": "fluids_temperature",
+      "name": "Fluids, Weather, Temperature",
+      "priority": "P2",
+      "subsystems": [
+        "water depth 0-7",
+        "magma depth 0-7",
+        "pressure",
+        "pumps",
+        "flow flags",
+        "freezing/thawing",
+        "magma-water obsidian reaction",
+        "fire/smoke/steam/mist",
+        "magma-safe/fire-safe materials"
+      ]
+    },
+    {
+      "id": "story_history",
+      "name": "Artifacts, Events, Legends",
+      "priority": "P1-P2",
+      "subsystems": [
+        "historical event log",
+        "announcements",
+        "strange moods",
+        "artifacts",
+        "engravings/art descriptions",
+        "books/written works",
+        "Legends browser",
+        "timeline branching"
+      ]
+    },
+    {
+      "id": "adventure_mode",
+      "name": "Adventure Mode",
+      "priority": "P3",
+      "subsystems": [
+        "character creation",
+        "party members",
+        "fast travel",
+        "town/site exploration",
+        "rumors/quests",
+        "dialogue",
+        "personal inventory",
+        "single-character combat",
+        "retirement/death writes to history"
+      ]
+    },
+    {
+      "id": "arena",
+      "name": "Object Testing Arena",
+      "priority": "P0-devtool",
+      "subsystems": [
+        "spawn creatures",
+        "assign equipment/skills",
+        "teams/conflict level",
+        "spawn water/magma/trees",
+        "weather/temperature controls",
+        "combat log analysis"
+      ]
+    }
+  ]
+}

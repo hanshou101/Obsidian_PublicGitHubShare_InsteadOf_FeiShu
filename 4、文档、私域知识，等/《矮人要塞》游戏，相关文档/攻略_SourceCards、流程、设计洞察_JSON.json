@@ -1,0 +1,1725 @@
+{
+  "meta": {
+    "title": "Dwarf Fortress guide and review corpus for web-remake AI coding",
+    "version": "0.1",
+    "created": "2026-07-01",
+    "language": "zh-CN",
+    "purpose": "Collect, organize, and abstract from-zero guides and player-review observations into actionable design/coding knowledge.",
+    "copyright_practice": "This corpus stores paraphrased summaries, source cards, URLs, and design abstractions rather than reproducing full guide text."
+  },
+  "source_cards": [
+    {
+      "id": "G01",
+      "title": "Dwarf Fortress Wiki — Quickstart Guide",
+      "url": "https://www.dwarffortresswiki.org/Quickstart_guide",
+      "language": "English",
+      "source_type": "community wiki / living reference",
+      "freshness": "current v53.15 page observed in 2026 search results",
+      "trust_level": "high for mechanics, medium for exact UI details because wiki pages can lag versions",
+      "best_for": [
+        "first-fortress sequence",
+        "embark criteria",
+        "minimal survival loop",
+        "new-player pitfalls"
+      ],
+      "extractable_domains": [
+        "worldgen",
+        "embark",
+        "digging",
+        "stockpiles",
+        "food",
+        "brewing",
+        "workshops",
+        "trading",
+        "rooms",
+        "defense"
+      ],
+      "coding_tags": [
+        "tutorial_flow",
+        "embark_advisor",
+        "minimum_viable_fortress",
+        "player_onboarding"
+      ],
+      "notes": "This should be the backbone for a guided tutorial questline, but not the only source."
+    },
+    {
+      "id": "G02",
+      "title": "Dwarf Fortress Wiki — Tutorials",
+      "url": "https://www.dwarffortresswiki.org/Tutorials",
+      "language": "English",
+      "source_type": "community wiki index",
+      "freshness": "living index; search result observed update in 2025",
+      "trust_level": "high as an index, source freshness varies by linked tutorial",
+      "best_for": [
+        "finding more specialized tutorials",
+        "coverage map",
+        "identifying legacy-but-useful material"
+      ],
+      "extractable_domains": [
+        "fortress mode",
+        "world generation",
+        "embark",
+        "legends",
+        "magma",
+        "labor management"
+      ],
+      "coding_tags": [
+        "source_index",
+        "coverage_gap_analysis"
+      ],
+      "notes": "Use as a directory; each linked article still needs version checks."
+    },
+    {
+      "id": "G03",
+      "title": "PeridexisErrant's DF Walkthrough",
+      "url": "https://df-walkthrough.readthedocs.io/",
+      "language": "English",
+      "source_type": "long-form walkthrough",
+      "freshness": "classic-era orientation, still widely recommended for fundamentals",
+      "trust_level": "high for conceptual flow, medium-low for exact Steam UI details",
+      "best_for": [
+        "campaign-style from-zero walkthrough",
+        "chaptered learning order",
+        "what every fortress needs"
+      ],
+      "extractable_domains": [
+        "getting started",
+        "workshops",
+        "furniture",
+        "stairs",
+        "home layout",
+        "industry",
+        "traps",
+        "nobles",
+        "soldiers"
+      ],
+      "coding_tags": [
+        "long_tutorial",
+        "chapter_flow",
+        "basic_fortress_curriculum"
+      ],
+      "notes": "Very useful for AI because it gives a narrative order rather than isolated encyclopedia pages."
+    },
+    {
+      "id": "G04",
+      "title": "PeridexisErrant 矮人要塞攻略（中文翻译）",
+      "url": "https://df-walkthrough-zh.readthedocs.io/",
+      "language": "Chinese",
+      "source_type": "translated walkthrough",
+      "freshness": "translation of classic guide; exact UI may not match current Steam edition",
+      "trust_level": "high for Chinese terminology mapping, medium for current mechanics",
+      "best_for": [
+        "中文团队共识",
+        "术语表",
+        "从零流程",
+        "翻译后的教学结构"
+      ],
+      "extractable_domains": [
+        "worldgen",
+        "embark",
+        "workshops",
+        "industry",
+        "traps",
+        "nobles",
+        "soldiers"
+      ],
+      "coding_tags": [
+        "zh_terms",
+        "tutorial_flow",
+        "translation_reference"
+      ],
+      "notes": "For a Chinese-speaking AI coding team, this is the most useful human-readable introductory corpus."
+    },
+    {
+      "id": "G05",
+      "title": "Steam Community — Simple Dwarf Fortress Guide by Polarbark",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2898454148",
+      "language": "English",
+      "source_type": "Steam community guide",
+      "freshness": "posted 2022; observed guide metadata updated 2025, but Steam marks it incompatible/needs caution",
+      "trust_level": "medium",
+      "best_for": [
+        "plain-language new-player explanation",
+        "broad overview",
+        "common issues/fixes"
+      ],
+      "extractable_domains": [
+        "world generation",
+        "embark",
+        "basic gameplay",
+        "industry",
+        "workshops",
+        "common problems"
+      ],
+      "coding_tags": [
+        "plain_language",
+        "newbie_pain_points",
+        "tutorial_copy_style"
+      ],
+      "notes": "Useful to understand how non-expert players explain the game, but check against wiki before encoding rules."
+    },
+    {
+      "id": "G06",
+      "title": "Steam Community — Dwarf Fortress Intermediate Guide: Strike The Earth Like a Master",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2899235556",
+      "language": "English",
+      "source_type": "large Steam community guide",
+      "freshness": "posted 2022, observed updated 2025",
+      "trust_level": "medium-high for Steam-era onboarding and midgame organization",
+      "best_for": [
+        "sequenced setup for a new fortress",
+        "manager/work orders",
+        "burrows",
+        "hospital",
+        "taverns",
+        "midgame systems"
+      ],
+      "extractable_domains": [
+        "manager",
+        "bookkeeper",
+        "work orders",
+        "labor",
+        "burrows",
+        "hospital",
+        "soap",
+        "tavern",
+        "military"
+      ],
+      "coding_tags": [
+        "midgame_curriculum",
+        "automation",
+        "hospital_system",
+        "burrow_alerts",
+        "social_locations"
+      ],
+      "notes": "A valuable bridge between minimal survival and a full fortress."
+    },
+    {
+      "id": "G07",
+      "title": "PC Gamer — Dwarf Fortress beginner guide",
+      "url": "https://www.pcgamer.com/dwarf-fortress-beginner-guide/",
+      "language": "English",
+      "source_type": "games press guide",
+      "freshness": "Steam release era; evergreen advice",
+      "trust_level": "medium",
+      "best_for": [
+        "new-player mental model",
+        "tile concepts",
+        "fortress ergonomics",
+        "food/drink advice"
+      ],
+      "extractable_domains": [
+        "tiles",
+        "mining",
+        "channeling",
+        "stairs",
+        "vertical layout",
+        "farms",
+        "booze",
+        "meeting/dining"
+      ],
+      "coding_tags": [
+        "ux_explanation",
+        "spatial_design",
+        "starter_tutorial_hints"
+      ],
+      "notes": "Good for onboarding copy and simplified mental models."
+    },
+    {
+      "id": "G08",
+      "title": "Explorminate — Dwarf Fortress Beginner's Guide: Learn to Strike the Earth Better",
+      "url": "https://explorminate.org/dwarf-fortress-beginners-guide-learn-to-strike-the-earth-better/",
+      "language": "English",
+      "source_type": "games press/community guide",
+      "freshness": "Steam release era; still useful for worldgen/embark heuristics",
+      "trust_level": "medium",
+      "best_for": [
+        "world creation settings",
+        "site examples",
+        "danger vs convenience trade-offs"
+      ],
+      "extractable_domains": [
+        "history length",
+        "civilizations",
+        "sites",
+        "beasts",
+        "savagery",
+        "minerals",
+        "embark safety"
+      ],
+      "coding_tags": [
+        "worldgen_ui",
+        "embark_scorer",
+        "difficulty_presets"
+      ],
+      "notes": "Useful for designing a beginner-friendly embark recommendation system."
+    },
+    {
+      "id": "G09",
+      "title": "Green Man Gaming — Dwarf Fortress Beginners' Guide, Tips for Getting Started",
+      "url": "https://www.greenmangaming.com/blog/dwarf-fortress-beginners-guide-tips-for-getting-started/",
+      "language": "English",
+      "source_type": "games press tips article",
+      "freshness": "2022 Steam release era",
+      "trust_level": "medium",
+      "best_for": [
+        "learning mindset",
+        "restart/failure loop",
+        "efficiency-first layout advice"
+      ],
+      "extractable_domains": [
+        "failure",
+        "layout efficiency",
+        "multi-level building",
+        "community help"
+      ],
+      "coding_tags": [
+        "onboarding_tone",
+        "failure_as_learning",
+        "layout_efficiency"
+      ],
+      "notes": "Not a rule reference; useful for tutorial tone."
+    },
+    {
+      "id": "G10",
+      "title": "Dwarf Fortress Wiki — Adventure mode quick start",
+      "url": "https://www.dwarffortresswiki.org/Adventure_mode_quick_start",
+      "language": "English",
+      "source_type": "community wiki guide",
+      "freshness": "observed as a recent v53-era Adventure Mode beginner guide",
+      "trust_level": "high for current Adventure Mode orientation",
+      "best_for": [
+        "adventure-mode onboarding",
+        "controls",
+        "travel/combat basics"
+      ],
+      "extractable_domains": [
+        "adventure creation",
+        "movement",
+        "combat",
+        "travel",
+        "conversation",
+        "quests"
+      ],
+      "coding_tags": [
+        "adventure_mode",
+        "control_reference",
+        "tutorial_flow"
+      ],
+      "notes": "Use when/if the web remake includes an Adventure-like mode or a world exploration debug mode."
+    },
+    {
+      "id": "G11",
+      "title": "Kitfox / BlindiRL YouTube beginner tutorials",
+      "url": "https://www.youtube.com/playlist?list=PLAcQJt6sSXKAOjppQTu3mu2RODxFGxcdd",
+      "language": "English",
+      "source_type": "official-publisher video tutorial playlist",
+      "freshness": "includes Steam-era official tutorial videos; Adventure Mode guide observed around 2025 launch coverage",
+      "trust_level": "high for player-facing onboarding",
+      "best_for": [
+        "onboarding order",
+        "visual UI teaching",
+        "Adventure Mode tutorial structure"
+      ],
+      "extractable_domains": [
+        "getting started",
+        "official tutorial flow",
+        "adventure primer"
+      ],
+      "coding_tags": [
+        "tutorial_video",
+        "ux_flow",
+        "official_onboarding"
+      ],
+      "notes": "Best used by humans to inspect UI flow; not ideal for direct automated text extraction."
+    },
+    {
+      "id": "G12",
+      "title": "Fangamer — Official Dwarf Fortress Guidebook",
+      "url": "https://www.fangamer.com/products/dwarf-fortress-guidebook-official",
+      "language": "English",
+      "source_type": "official physical guidebook product page",
+      "freshness": "official guidebook listing; page observed in 2026 search",
+      "trust_level": "high for scope/topics, but actual book content must be obtained separately",
+      "best_for": [
+        "what an official beginner-to-intermediate curriculum includes",
+        "topic coverage map"
+      ],
+      "extractable_domains": [
+        "world dawn",
+        "site choice",
+        "industry",
+        "food/clothing/happiness",
+        "defense",
+        "wind/water power",
+        "deep threats"
+      ],
+      "coding_tags": [
+        "curriculum_scope",
+        "official_topic_map"
+      ],
+      "notes": "Product page only describes the book; do not infer detailed rules from it."
+    },
+    {
+      "id": "G13",
+      "title": "灰机 Wiki — 快速入门指南",
+      "url": "https://dfzh.huijiwiki.com/wiki/%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97",
+      "language": "Chinese",
+      "source_type": "Chinese wiki / translated reference",
+      "freshness": "Chinese community reference; verify current-version coverage",
+      "trust_level": "medium-high for Chinese terminology and introduction",
+      "best_for": [
+        "中文术语",
+        "开局/启程解释",
+        "中文 onboarding 文案"
+      ],
+      "extractable_domains": [
+        "embark",
+        "starting location",
+        "supplies",
+        "first fortress"
+      ],
+      "coding_tags": [
+        "zh_terms",
+        "embark_advisor",
+        "tutorial_copy"
+      ],
+      "notes": "Good companion to English wiki; exact version status should be checked per page."
+    },
+    {
+      "id": "G14",
+      "title": "Dwarf Fortress 教学教程／参考资料收集中文翻译",
+      "url": "https://take72k.github.io/DwarfFortress/tutorialIndex/",
+      "language": "Chinese / Traditional Chinese",
+      "source_type": "Chinese-language tutorial index",
+      "freshness": "published around 2021; classic-era but useful",
+      "trust_level": "medium",
+      "best_for": [
+        "中文资料索引",
+        "PeridexisErrant 教学章节映射"
+      ],
+      "extractable_domains": [
+        "getting started",
+        "workshops",
+        "home",
+        "industry"
+      ],
+      "coding_tags": [
+        "zh_source_index",
+        "translation_reference"
+      ],
+      "notes": "Use as a Chinese reference catalog, not as current UI truth."
+    },
+    {
+      "id": "G15",
+      "title": "Dwarf Fortress Wiki — Work orders",
+      "url": "https://www.dwarffortresswiki.org/Work_orders",
+      "language": "English",
+      "source_type": "community wiki mechanics page",
+      "freshness": "living v53-era wiki page, may need specific version checks",
+      "trust_level": "high for rule modeling",
+      "best_for": [
+        "manager automation",
+        "conditional production",
+        "repeat cadence",
+        "resource thresholds"
+      ],
+      "extractable_domains": [
+        "work orders",
+        "conditions",
+        "repeat frequency",
+        "manager office",
+        "workshop profile"
+      ],
+      "coding_tags": [
+        "automation",
+        "job_system",
+        "conditional_orders",
+        "manager_ui"
+      ],
+      "notes": "One of the most important references for an AI coding tool implementing the economy loop."
+    },
+    {
+      "id": "G16",
+      "title": "Dwarf Fortress Wiki — Stockpile design",
+      "url": "https://www.dwarffortresswiki.org/Stockpile_design",
+      "language": "English",
+      "source_type": "community wiki design article",
+      "freshness": "older but still conceptually useful",
+      "trust_level": "medium-high for logistics principles",
+      "best_for": [
+        "hauling optimization",
+        "feeder stockpiles",
+        "workshop adjacency",
+        "wheelbarrow trade-offs"
+      ],
+      "extractable_domains": [
+        "stockpiles",
+        "hauling",
+        "workshop layout",
+        "pathfinding load",
+        "wheelbarrows"
+      ],
+      "coding_tags": [
+        "logistics",
+        "pathfinding",
+        "stockpile_links",
+        "layout_advisor"
+      ],
+      "notes": "Translate into heuristics: shorter hauling paths, input/output proximity, congestion reduction."
+    },
+    {
+      "id": "G17",
+      "title": "DFHack Docs — Quickfort user guide",
+      "url": "https://docs.dfhack.org/en/53.04-r1/docs/guides/quickfort-user-guide.html",
+      "language": "English",
+      "source_type": "mod/tool documentation",
+      "freshness": "DFHack 53.04-r1 versioned docs observed in 2026 search results",
+      "trust_level": "high for blueprint/tool concepts, not base-game mechanics",
+      "best_for": [
+        "blueprint DSL",
+        "batch designations",
+        "CSV/XLSX layout import",
+        "automation UX"
+      ],
+      "extractable_domains": [
+        "blueprints",
+        "dig/place/build/zone/burrow modes",
+        "manager orders",
+        "preview/apply/undo"
+      ],
+      "coding_tags": [
+        "blueprint_dsl",
+        "quick_build",
+        "design_tooling",
+        "editor_import"
+      ],
+      "notes": "This is directly useful for a web remake because web UIs can natively support blueprint import/export."
+    },
+    {
+      "id": "G18",
+      "title": "DFHack Docs — Quickfort blueprint library / Dreamfort",
+      "url": "https://docs.dfhack.org/en/52.02-r1/docs/guides/quickfort-library-guide.html",
+      "language": "English",
+      "source_type": "mod/tool blueprint library docs",
+      "freshness": "versioned DFHack documentation",
+      "trust_level": "high for blueprint examples and automation patterns",
+      "best_for": [
+        "complete-fort layout archetype",
+        "self-sustaining fortress design",
+        "automation baseline"
+      ],
+      "extractable_domains": [
+        "Dreamfort",
+        "farming",
+        "defense",
+        "workshops",
+        "stockpiles",
+        "hospital",
+        "library",
+        "temple",
+        "jail",
+        "well",
+        "guildhalls",
+        "noble suites"
+      ],
+      "coding_tags": [
+        "reference_architecture",
+        "fortress_blueprint",
+        "self_sustaining_base"
+      ],
+      "notes": "Great for defining an internal test map / regression scenario."
+    },
+    {
+      "id": "G19",
+      "title": "Steam Community Guides index for Dwarf Fortress",
+      "url": "https://steamcommunity.com/app/975370/guides/",
+      "language": "Mixed",
+      "source_type": "community guide index",
+      "freshness": "live Steam index",
+      "trust_level": "medium as index, individual guides vary",
+      "best_for": [
+        "finding niche guides",
+        "community pain points",
+        "what players repeatedly need help with"
+      ],
+      "extractable_domains": [
+        "magma",
+        "minecarts",
+        "libraries",
+        "tips",
+        "workshops",
+        "adventure mode"
+      ],
+      "coding_tags": [
+        "source_discovery",
+        "user_pain_points",
+        "niche_mechanics"
+      ],
+      "notes": "Use for discovery; do not encode rules without cross-checking."
+    },
+    {
+      "id": "G20",
+      "title": "Gcores — 《矮人要塞》新手指南：如何上手这款硬核到极致的游戏",
+      "url": "https://www.gcores.com/articles/26517",
+      "language": "Chinese",
+      "source_type": "Chinese games essay/guide",
+      "freshness": "2017 classic-era article",
+      "trust_level": "medium for vibe, lower for current UI",
+      "best_for": [
+        "中文感性理解",
+        "reading pleasure",
+        "creative freedom",
+        "player-authored projects"
+      ],
+      "extractable_domains": [
+        "inspectable world",
+        "personal stories",
+        "creative construction",
+        "stupid dwarf tricks",
+        "automation tools"
+      ],
+      "coding_tags": [
+        "vibe",
+        "story_surface",
+        "creative_projects",
+        "chinese_context"
+      ],
+      "notes": "Very useful for explaining why the game feels special."
+    },
+    {
+      "id": "G21",
+      "title": "Pixelated Playgrounds — A Review of Dwarf Fortress Reviews",
+      "url": "https://www.pixelatedplaygrounds.com/sidequests/2024/8/28/a-review-of-dwarf-fortress-reviews",
+      "language": "English",
+      "source_type": "critical essay analyzing Steam review stories",
+      "freshness": "2024",
+      "trust_level": "medium-high for design interpretation",
+      "best_for": [
+        "emergent story analysis",
+        "review-story patterns",
+        "legibility/consequence/breadth design principles"
+      ],
+      "extractable_domains": [
+        "systemic complexity",
+        "legible consequences",
+        "health/body stories",
+        "player mistakes",
+        "mystery/investigation",
+        "comedy"
+      ],
+      "coding_tags": [
+        "emergent_narrative",
+        "story_design",
+        "telemetry_to_story",
+        "legibility"
+      ],
+      "notes": "Excellent for converting community anecdotes into UI/story-system requirements."
+    },
+    {
+      "id": "G22",
+      "title": "Third Coast Review — Dwarf Fortress Is Breathtakingly Complex",
+      "url": "https://thirdcoastreview.com/games-tech/2022/12/06/review-dwarf-fortress",
+      "language": "English",
+      "source_type": "review",
+      "freshness": "Steam release review",
+      "trust_level": "medium",
+      "best_for": [
+        "what general players notice",
+        "complexity vs accessibility",
+        "failure stories"
+      ],
+      "extractable_domains": [
+        "complexity",
+        "tutorial insufficiency",
+        "self-directed goals",
+        "weather/poetry/instruments"
+      ],
+      "coding_tags": [
+        "player_impression",
+        "accessibility",
+        "goal_design"
+      ],
+      "notes": "Use as perception data rather than rule source."
+    },
+    {
+      "id": "G23",
+      "title": "Washington Post — Dwarf Fortress review",
+      "url": "https://www.washingtonpost.com/video-games/reviews/dwarf-fortress-review/",
+      "language": "English",
+      "source_type": "review",
+      "freshness": "Steam release review",
+      "trust_level": "medium",
+      "best_for": [
+        "mainstream explanation of fortress mode",
+        "failure as forensic story"
+      ],
+      "extractable_domains": [
+        "digging settlement",
+        "rooms",
+        "food/alcohol",
+        "indirect control",
+        "failure investigation"
+      ],
+      "coding_tags": [
+        "player_impression",
+        "failure_feedback",
+        "onboarding_explanation"
+      ],
+      "notes": "Useful for simple high-level descriptions."
+    },
+    {
+      "id": "G24",
+      "title": "Dwarf Fortress Wiki — Bloodline: Boatmurdered",
+      "url": "https://dwarffortresswiki.org/index.php/Bloodline%3ABoatmurdered",
+      "language": "English",
+      "source_type": "community story / wiki archive",
+      "freshness": "historic classic-era story",
+      "trust_level": "medium for cultural impact, not current mechanics",
+      "best_for": [
+        "succession-story structure",
+        "failure spirals",
+        "player narrative amplification"
+      ],
+      "extractable_domains": [
+        "elephants",
+        "flooding",
+        "magma",
+        "trader deaths",
+        "tantrum/insanity spiral"
+      ],
+      "coding_tags": [
+        "emergent_story",
+        "failure_spiral",
+        "legendary_case_study"
+      ],
+      "notes": "Do not treat as a current mechanics spec; treat as a cultural design target."
+    },
+    {
+      "id": "G25",
+      "title": "Dwarf Fortress Wiki — Stupid dwarf trick",
+      "url": "https://dwarffortresswiki.org/index.php/Stupid_dwarf_trick",
+      "language": "English",
+      "source_type": "community project catalog",
+      "freshness": "living wiki, project examples from many versions",
+      "trust_level": "medium",
+      "best_for": [
+        "absurd engineering inspiration",
+        "sandbox depth target",
+        "post-survival goals"
+      ],
+      "extractable_domains": [
+        "aqueducts",
+        "waterfalls",
+        "machines",
+        "death traps",
+        "dwarfputer",
+        "megaprojects"
+      ],
+      "coding_tags": [
+        "sandbox_goals",
+        "engineering_projects",
+        "late_game_fun"
+      ],
+      "notes": "Each trick depends on systems the remake may not initially implement."
+    },
+    {
+      "id": "G26",
+      "title": "Dwarf Fortress Wiki — Megaproject",
+      "url": "https://dwarffortresswiki.org/index.php/Megaproject",
+      "language": "English",
+      "source_type": "community project catalog",
+      "freshness": "living wiki, mostly inspirational",
+      "trust_level": "medium",
+      "best_for": [
+        "late-game ambition",
+        "base-building scale",
+        "player-authored objectives"
+      ],
+      "extractable_domains": [
+        "magma sea colony",
+        "Moria",
+        "mountain rebuilds",
+        "obsidian casting"
+      ],
+      "coding_tags": [
+        "late_game",
+        "macro_construction",
+        "player_goals"
+      ],
+      "notes": "Use to design achievements/blueprint examples, not early MVP."
+    },
+    {
+      "id": "G27",
+      "title": "PC Gamer — How cats get drunk in Dwarf Fortress",
+      "url": "https://www.pcgamer.com/how-cats-get-drunk-in-dwarf-fortress-and-why-its-creators-havent-figured-out-time-travel-yet/",
+      "language": "English",
+      "source_type": "developer interview / story article",
+      "freshness": "2016, classic emergent-bug story",
+      "trust_level": "medium-high for story origin",
+      "best_for": [
+        "emergent system interaction example",
+        "body size/liquid/effect consequences"
+      ],
+      "extractable_domains": [
+        "liquid contamination",
+        "self-cleaning",
+        "ingestion",
+        "syndrome/effects",
+        "body size"
+      ],
+      "coding_tags": [
+        "emergent_bug",
+        "interaction_composition",
+        "forensic_debugging"
+      ],
+      "notes": "Excellent example of how low-level simulation can create memorable stories."
+    },
+    {
+      "id": "G28",
+      "title": "Dwarf Fortress Bug Tracker — Cats dying for no reason / alcohol poisoning?",
+      "url": "https://dwarffortressbugtracker.com/view.php?id=9195",
+      "language": "English",
+      "source_type": "bug tracker archive",
+      "freshness": "2015 historical issue",
+      "trust_level": "medium-high for the specific anecdote",
+      "best_for": [
+        "system-interaction forensic trace",
+        "bug-as-story analysis"
+      ],
+      "extractable_domains": [
+        "self-cleaning interaction",
+        "ingested syndrome tag",
+        "spilled alcohol",
+        "body size"
+      ],
+      "coding_tags": [
+        "emergent_bug",
+        "debug_log_design",
+        "simulation_trace"
+      ],
+      "notes": "Convert into requirement: story events need traceability from rule interaction to visible consequence."
+    },
+    {
+      "id": "G29",
+      "title": "Steam discussion — Are all crazy stories genuine?",
+      "url": "https://steamcommunity.com/app/975370/discussions/0/5792223132438142247/",
+      "language": "English",
+      "source_type": "community discussion",
+      "freshness": "live forum/discussion content varies",
+      "trust_level": "low-medium",
+      "best_for": [
+        "understanding player skepticism",
+        "how anecdotes are embellished",
+        "story/log relation"
+      ],
+      "extractable_domains": [
+        "player narratives",
+        "logs",
+        "embellishment",
+        "insanity",
+        "military heroics"
+      ],
+      "coding_tags": [
+        "community_perception",
+        "story_surface",
+        "log_to_narrative"
+      ],
+      "notes": "Use only as qualitative evidence; forum pages are noisy and mutable."
+    },
+    {
+      "id": "G30",
+      "title": "Steam discussion — How do you get these cool stories?",
+      "url": "https://steamcommunity.com/app/975370/discussions/0/599643321875370070/",
+      "language": "English",
+      "source_type": "community discussion",
+      "freshness": "live forum/discussion content varies",
+      "trust_level": "low-medium",
+      "best_for": [
+        "understanding story discovery workflow",
+        "watching dwarves",
+        "using Legends Mode"
+      ],
+      "extractable_domains": [
+        "observation",
+        "thoughts/personality inspection",
+        "Legends Mode",
+        "investigation"
+      ],
+      "coding_tags": [
+        "story_discovery",
+        "legends_ui",
+        "inspect_panel"
+      ],
+      "notes": "Key lesson: the game does not always narrate automatically; players actively assemble stories."
+    },
+    {
+      "id": "G31",
+      "title": "Dwarf Fortress Wiki — Stories",
+      "url": "https://dwarffortresswiki.org/index.php/Stories",
+      "language": "English",
+      "source_type": "community wiki story index",
+      "freshness": "living v53-era wiki page, observed in 2026 search results",
+      "trust_level": "medium-high as a story index, individual linked stories vary",
+      "best_for": [
+        "finding classic story corpora",
+        "Hall of Legends",
+        "story-source discovery"
+      ],
+      "extractable_domains": [
+        "player stories",
+        "legends",
+        "community archives"
+      ],
+      "coding_tags": [
+        "story_index",
+        "emergent_narrative",
+        "source_discovery"
+      ],
+      "notes": "Use as a directory for human reading and inspiration; not a mechanics spec."
+    },
+    {
+      "id": "G32",
+      "title": "Reddit — How are you guys seeing all the stories?",
+      "url": "https://www.reddit.com/r/dwarffortress/comments/10fplbz/how_are_you_guys_seeing_all_the_stories/",
+      "language": "English",
+      "source_type": "community discussion",
+      "freshness": "2023 discussion, qualitative",
+      "trust_level": "low-medium",
+      "best_for": [
+        "understanding story-discovery UX",
+        "logs/thoughts/personalities/relations/rumors/Legends workflow"
+      ],
+      "extractable_domains": [
+        "combat logs",
+        "thoughts",
+        "personality",
+        "relationships",
+        "rumors",
+        "Legends Mode"
+      ],
+      "coding_tags": [
+        "story_discovery",
+        "inspect_panel",
+        "legends_ui",
+        "rumor_system"
+      ],
+      "notes": "Useful because players explicitly explain how they inspect the game to find stories."
+    }
+  ],
+  "canonical_zero_to_fortress_flow": [
+    {
+      "step_id": "F00",
+      "name": "学习心态：把失败当成学习回路",
+      "player_goal": "接受没有标准胜利条件，第一座堡垒的目标只是建立一个可持续小社区。",
+      "mechanics_to_model": [
+        "failure_persistence",
+        "announcement_log",
+        "post_mortem_summary"
+      ],
+      "ui_requirements": [
+        "展示可恢复的失败摘要",
+        "提示玩家每次失败会留下世界历史"
+      ],
+      "common_pitfalls": [
+        "把首次堡垒当成必须完美通关",
+        "过早追求复杂机器/岩浆/军事"
+      ],
+      "source_ids": [
+        "G01",
+        "G03",
+        "G09",
+        "G21"
+      ]
+    },
+    {
+      "step_id": "F01",
+      "name": "创建世界",
+      "player_goal": "选择世界大小、历史年数、文明/站点/野兽/矿物/自然野性等参数。",
+      "mechanics_to_model": [
+        "world_seed",
+        "history_length",
+        "civilizations",
+        "sites",
+        "beasts",
+        "savagery",
+        "minerals"
+      ],
+      "ui_requirements": [
+        "提供新手预设",
+        "显示性能成本",
+        "显示危险度/资源丰富度评分"
+      ],
+      "common_pitfalls": [
+        "新手选过大世界导致生成/运行慢",
+        "忽略自然野性和邪恶生物群系"
+      ],
+      "source_ids": [
+        "G01",
+        "G02",
+        "G08"
+      ]
+    },
+    {
+      "step_id": "F02",
+      "name": "选择启程地点 Embark",
+      "player_goal": "找一个安全、资源足够、可持续的地点，而不是一开始就挑战地狱难度。",
+      "mechanics_to_model": [
+        "biome",
+        "aquifer",
+        "trees",
+        "surface_water",
+        "soil",
+        "clay",
+        "sand",
+        "flux",
+        "iron",
+        "neighbors"
+      ],
+      "ui_requirements": [
+        "Embark Advisor：标红重/多层含水层、邪恶/凶恶区域、敌对邻居",
+        "推荐河流/树林/土层/非邪恶/非凶恶/可贸易文明"
+      ],
+      "common_pitfalls": [
+        "不知道含水层会阻碍挖掘",
+        "缺木头或缺土层导致早期农业/床/桶困难",
+        "与哥布林/塔太近"
+      ],
+      "source_ids": [
+        "G01",
+        "G08",
+        "G13"
+      ]
+    },
+    {
+      "step_id": "F03",
+      "name": "准备七名矮人和起始物资",
+      "player_goal": "带足镐、酒、食物、种子、斧/医疗/贸易关键物资，并设置基础技能。",
+      "mechanics_to_model": [
+        "starting_dwarves",
+        "skills",
+        "embark_items",
+        "tools",
+        "seeds",
+        "animals"
+      ],
+      "ui_requirements": [
+        "显示物资用途和缺失警告",
+        "推荐至少两名矿工与足够工具",
+        "提供新手装载模板"
+      ],
+      "common_pitfalls": [
+        "忘记镐导致无法挖掘",
+        "忘记斧头导致无法砍树",
+        "过早带大量无用奢侈品"
+      ],
+      "source_ids": [
+        "G01",
+        "G03",
+        "G06"
+      ]
+    },
+    {
+      "step_id": "F04",
+      "name": "抵达后建立安全聚集点和初始 stockpile",
+      "player_goal": "让矮人和物资尽快从野外进入相对安全的位置。",
+      "mechanics_to_model": [
+        "meeting_area",
+        "stockpile",
+        "hauling_jobs",
+        "wagon_items",
+        "forbidden_items"
+      ],
+      "ui_requirements": [
+        "一键创建临时室内 All stockpile 和 meeting area",
+        "高亮未搬运物资",
+        "显示搬运队列"
+      ],
+      "common_pitfalls": [
+        "以为能直接控制矮人",
+        "物资留在地表被动物/敌人/天气影响",
+        "把 refuse/corpses 放进主仓导致腐烂/瘴气"
+      ],
+      "source_ids": [
+        "G01",
+        "G06",
+        "G16"
+      ]
+    },
+    {
+      "step_id": "F05",
+      "name": "挖入口、楼梯、基础大厅",
+      "player_goal": "用 designation 间接下达挖掘命令，建立可扩展的垂直要塞骨架。",
+      "mechanics_to_model": [
+        "dig_designation",
+        "stairs",
+        "channeling",
+        "ramps",
+        "walkability",
+        "path_cost"
+      ],
+      "ui_requirements": [
+        "明确区分挖掘/通道/楼梯",
+        "提供水体/含水层警告",
+        "显示通行图"
+      ],
+      "common_pitfalls": [
+        "把 channeling 当普通挖掘",
+        "挖穿水体或让水对角流入",
+        "大厅过宽导致早期工程量过大"
+      ],
+      "source_ids": [
+        "G01",
+        "G07"
+      ]
+    },
+    {
+      "step_id": "F06",
+      "name": "建立食物与酒的最小闭环",
+      "player_goal": "让矮人持续有食物和酒，优先种植 plump helmets 并建 still 酿酒。",
+      "mechanics_to_model": [
+        "farm_plot",
+        "seasons",
+        "plants",
+        "seeds",
+        "brewing",
+        "barrels",
+        "prepared_meals",
+        "kitchen_permissions"
+      ],
+      "ui_requirements": [
+        "显示 food/drink days left",
+        "提示禁止烹饪酒和种子",
+        "提供重复酿酒/做饭订单"
+      ],
+      "common_pitfalls": [
+        "只关注食物忘记酒",
+        "把种子或酒拿去烹饪",
+        "农田太大浪费劳动力"
+      ],
+      "source_ids": [
+        "G01",
+        "G06",
+        "G07",
+        "G15"
+      ]
+    },
+    {
+      "step_id": "F07",
+      "name": "建立第一批工坊和家具链",
+      "player_goal": "用 carpenter/stoneworker/mechanic 等工坊生产床、门、桌椅、箱、机制零件。",
+      "mechanics_to_model": [
+        "workshop",
+        "job_queue",
+        "item_quality",
+        "material_selection",
+        "input_stockpile",
+        "output_stockpile"
+      ],
+      "ui_requirements": [
+        "工坊邻近输入/输出 stockpile 的建议",
+        "显示缺材料/缺工人/缺技能原因",
+        "提供批量家具订单"
+      ],
+      "common_pitfalls": [
+        "工坊离材料太远导致搬运时间占满",
+        "没有足够木头做床/桶",
+        "关键技工被搬运打断"
+      ],
+      "source_ids": [
+        "G01",
+        "G03",
+        "G06",
+        "G16"
+      ]
+    },
+    {
+      "step_id": "F08",
+      "name": "把通用仓库拆成专业 stockpile",
+      "player_goal": "建立 food/drink/seeds/wood/stone/bar blocks/refuse/corpses 等专用仓库。",
+      "mechanics_to_model": [
+        "stockpile_filters",
+        "give_to_take_from_links",
+        "bins_barrels",
+        "wheelbarrows",
+        "miasma"
+      ],
+      "ui_requirements": [
+        "可视化仓库过滤规则",
+        "高亮会腐烂/发臭/阻塞的物品",
+        "支持 stockpile 链接"
+      ],
+      "common_pitfalls": [
+        "refuse 进主仓",
+        "石头堆占满所有空间",
+        "木头/石头搬运过远拖慢全堡垒"
+      ],
+      "source_ids": [
+        "G01",
+        "G16"
+      ]
+    },
+    {
+      "step_id": "F09",
+      "name": "建立卧室、餐厅、办公室",
+      "player_goal": "从临时宿舍过渡到卧室/餐厅，给 manager/bookkeeper/broker 等管理员办公空间。",
+      "mechanics_to_model": [
+        "zones",
+        "rooms",
+        "ownership",
+        "furniture",
+        "room_value",
+        "noble_requirements"
+      ],
+      "ui_requirements": [
+        "房间价值/归属/家具缺口面板",
+        "批量卧室划分",
+        "办公室需求提示"
+      ],
+      "common_pitfalls": [
+        "没有办公室导致管理功能不顺",
+        "长期没有餐厅/卧室造成坏想法",
+        "房间设计过大占用过多工作量"
+      ],
+      "source_ids": [
+        "G01",
+        "G06",
+        "G07"
+      ]
+    },
+    {
+      "step_id": "F10",
+      "name": "启用 Manager 与 Work Orders",
+      "player_goal": "从手动工坊排队过渡到条件化、周期性生产。",
+      "mechanics_to_model": [
+        "manager_role",
+        "work_order",
+        "conditions",
+        "frequency",
+        "resource_counting",
+        "job_expansion"
+      ],
+      "ui_requirements": [
+        "可读条件编辑器",
+        "库存阈值提示",
+        "订单失败原因",
+        "订单产生的子任务追踪"
+      ],
+      "common_pitfalls": [
+        "订单数量过大导致占用全堡垒",
+        "没有资源条件导致无限生产",
+        "bookkeeper 精度不足影响库存判断"
+      ],
+      "source_ids": [
+        "G06",
+        "G15",
+        "G18"
+      ]
+    },
+    {
+      "step_id": "F11",
+      "name": "贸易与商队",
+      "player_goal": "建立 trade depot、搬货、估价、买关键缺口物资。",
+      "mechanics_to_model": [
+        "caravan",
+        "trade_depot",
+        "wagon_path",
+        "broker",
+        "value",
+        "ethics_taboo",
+        "export_agreement"
+      ],
+      "ui_requirements": [
+        "显示 depot 是否 wagon 可达",
+        "贸易物资推荐清单",
+        "标记精灵禁忌木/骨/壳制品"
+      ],
+      "common_pitfalls": [
+        "贸易站路太窄",
+        "用禁忌材料激怒精灵",
+        "不知道哪些资源该买：酒/食物/种子/木头/桶/布/皮/金属等"
+      ],
+      "source_ids": [
+        "G01",
+        "G06"
+      ]
+    },
+    {
+      "step_id": "F12",
+      "name": "早期防御：门、桥、机关、陷阱、狗、burrow",
+      "player_goal": "不追求完美军队，先保证可以封门、撤离、拖延敌人。",
+      "mechanics_to_model": [
+        "doors",
+        "bridges",
+        "levers",
+        "mechanisms",
+        "traps",
+        "cage_trap",
+        "burrows",
+        "civilian_alerts"
+      ],
+      "ui_requirements": [
+        "紧急 burrow 按钮",
+        "桥/拉杆链接检查",
+        "商队通路与陷阱阻塞检查"
+      ],
+      "common_pitfalls": [
+        "陷阱/建筑挡住商队车路径",
+        "拉杆没连上桥",
+        "打仗时平民继续乱跑"
+      ],
+      "source_ids": [
+        "G01",
+        "G06"
+      ]
+    },
+    {
+      "step_id": "F13",
+      "name": "金属工业与基础军事",
+      "player_goal": "生产武器、护甲、工具；训练小队以应对袭击和地下威胁。",
+      "mechanics_to_model": [
+        "ore",
+        "smelter",
+        "fuel",
+        "charcoal",
+        "coke",
+        "bars",
+        "weapons",
+        "armor",
+        "squads",
+        "uniforms",
+        "training_schedule"
+      ],
+      "ui_requirements": [
+        "矿石→条→武器/护甲链路图",
+        "缺燃料/缺 flux/缺矿石提示",
+        "小队装备状态"
+      ],
+      "common_pitfalls": [
+        "不知道金属需要燃料",
+        "有矿石但没有可用冶炼链",
+        "小队没有装备/训练/兵营"
+      ],
+      "source_ids": [
+        "G01",
+        "G06"
+      ]
+    },
+    {
+      "step_id": "F14",
+      "name": "医院、清洗、肥皂链",
+      "player_goal": "在中期准备 hospital 及 thread/cloth/splints/crutches/plaster/buckets/soap/water 等物资。",
+      "mechanics_to_model": [
+        "hospital_zone",
+        "diagnosis",
+        "healthcare_jobs",
+        "wound",
+        "infection",
+        "soap_chain",
+        "water_source"
+      ],
+      "ui_requirements": [
+        "医院库存面板",
+        "治疗阶段队列",
+        "肥皂链引导",
+        "伤员状态可视化"
+      ],
+      "common_pitfalls": [
+        "没有医生/床/桌/牵引床/水桶",
+        "肥皂链太长没提前准备",
+        "伤员无人清洗/包扎"
+      ],
+      "source_ids": [
+        "G06"
+      ]
+    },
+    {
+      "step_id": "F15",
+      "name": "社会空间：酒馆、神庙、图书馆、公会",
+      "player_goal": "满足社交、信仰、学习、表演、访客等中后期需求。",
+      "mechanics_to_model": [
+        "locations",
+        "visitors",
+        "performers",
+        "tavern_keeper",
+        "temple_deity",
+        "library_books",
+        "guildhall_petitions"
+      ],
+      "ui_requirements": [
+        "location 功能清单",
+        "访客/居民权限",
+        "醉酒/打架风险提示"
+      ],
+      "common_pitfalls": [
+        "酒馆带来快乐也带来斗殴",
+        "访客和居民权限不清",
+        "缺杯/乐器/书架等配套"
+      ],
+      "source_ids": [
+        "G06",
+        "G20"
+      ]
+    },
+    {
+      "step_id": "F16",
+      "name": "Legends/故事观察与事后复盘",
+      "player_goal": "把玩家的建筑、失败、事故、英雄事迹沉淀成可查询的世界历史。",
+      "mechanics_to_model": [
+        "historical_event",
+        "entity_link",
+        "legends_browser",
+        "rumor",
+        "site_history",
+        "postmortem"
+      ],
+      "ui_requirements": [
+        "事件时间线",
+        "按人物/地点/物品反查故事",
+        "失败原因自动聚合",
+        "可分享战报"
+      ],
+      "common_pitfalls": [
+        "只记录日志但没有检索/归因",
+        "玩家看不到因果链，只觉得随机"
+      ],
+      "source_ids": [
+        "G21",
+        "G23",
+        "G24",
+        "G30",
+        "G31",
+        "G32"
+      ]
+    }
+  ],
+  "design_insights": [
+    {
+      "id": "D01",
+      "name": "攻略不是线性答案，而是把玩家带入自给自足循环",
+      "observation": "最有价值的新手攻略都围绕“从车队到可持续堡垒”展开：地点、物资、挖掘、仓库、食物、酒、床、餐厅、工坊、贸易、防御。",
+      "implementation": "把 tutorial 做成一条可跳过的任务链；每个任务同时解释玩家意图、系统条件和失败原因。",
+      "source_ids": [
+        "G01",
+        "G03",
+        "G06"
+      ]
+    },
+    {
+      "id": "D02",
+      "name": "间接控制是核心手感",
+      "observation": "玩家通常不直接操控单个矮人，而是画区域、指定任务、配置规则；乐趣来自系统自动执行和出错后的调查。",
+      "implementation": "Job 系统必须包含 job reservation、labor eligibility、pathfinding、resource availability、cancellation reason，并在 UI 里可追踪。",
+      "source_ids": [
+        "G01",
+        "G07",
+        "G21"
+      ]
+    },
+    {
+      "id": "D03",
+      "name": "物流和距离是隐藏主玩法",
+      "observation": "很多攻略反复强调工坊、仓库、输入输出距离、wheelbarrows、垂直布局；这说明“少走路”本身就是策略。",
+      "implementation": "引擎中每个 job 都应有移动成本；UI 提供物流热力图和 stockpile-link 可视化。",
+      "source_ids": [
+        "G06",
+        "G16",
+        "G17",
+        "G18"
+      ]
+    },
+    {
+      "id": "D04",
+      "name": "Work Orders 是从新手手动操作到堡垒自动化的分水岭",
+      "observation": "手动工坊队列适合教学，条件化 work orders 适合稳定中期运营。",
+      "implementation": "早期就实现一个简化版条件订单系统：目标物品、数量、周期、条件、失败原因、生成 job 列表。",
+      "source_ids": [
+        "G06",
+        "G15",
+        "G18"
+      ]
+    },
+    {
+      "id": "D05",
+      "name": "玩家故事需要可读的因果链",
+      "observation": "评论中的精彩故事往往来自系统间交互；玩家需要能从尸体、伤口、日志、思想、关系、地点历史中还原事件。",
+      "implementation": "每个重要事件都写入 EventLog，并保留 cause/ref links：actor、target、item、location、material、previous_event。",
+      "source_ids": [
+        "G20",
+        "G21",
+        "G27",
+        "G28",
+        "G30"
+      ]
+    },
+    {
+      "id": "D06",
+      "name": "失败不是惩罚，是内容生成器",
+      "observation": "水淹、含水层、怪物、斗殴、贵族要求、医疗失败、敌袭、物流崩溃都可以变成战报。",
+      "implementation": "实现 Reclaim/Retire/Legends-lite：堡垒失败后仍保留废墟、幸存者、神器、墓碑和事故时间线。",
+      "source_ids": [
+        "G21",
+        "G23",
+        "G24"
+      ]
+    },
+    {
+      "id": "D07",
+      "name": "复杂系统只有在可检查时才有魅力",
+      "observation": "游戏魅力来自“几乎每个 tile、物品、生物、关系、念头都能检查”，但新手也常被信息埋没。",
+      "implementation": "实现分层 inspector：默认展示三行结论，展开后展示完整状态、历史、规则来源和可行动建议。",
+      "source_ids": [
+        "G20",
+        "G21",
+        "G30",
+        "G32"
+      ]
+    },
+    {
+      "id": "D08",
+      "name": "“愚蠢的矮人戏法”和巨构是后期目标替代品",
+      "observation": "由于没有硬性胜利，玩家会自创金字塔、水泵、岩浆装置、巨型宫殿、Moria、机器等目标。",
+      "implementation": "不要只做生存；提供 blueprint、成就、材料统计、工程验证和性能安全阈值支持自定义目标。",
+      "source_ids": [
+        "G20",
+        "G25",
+        "G26",
+        "G18"
+      ]
+    }
+  ],
+  "emergent_examples": [
+    {
+      "id": "E01",
+      "name": "醉猫 / 酒精清洁链",
+      "summary": "猫踩过溢出的酒，清洁身体时摄入酒精；体型/剂量/综合征规则共同造成醉猫甚至死亡的经典故事。",
+      "systems_involved": [
+        "liquid_spill",
+        "body_covering",
+        "self_cleaning_interaction",
+        "ingestion",
+        "syndrome_effect",
+        "body_size"
+      ],
+      "coding_takeaway": "涌现故事来自小规则组合；每一步都应可在 debug/story trace 中查看。",
+      "source_ids": [
+        "G27",
+        "G28"
+      ]
+    },
+    {
+      "id": "E02",
+      "name": "Boatmurdered",
+      "summary": "早期著名接力战报，包含大象、洪水、岩浆、商队事故、精神崩溃等多重失败链。",
+      "systems_involved": [
+        "wildlife",
+        "siege",
+        "flooding",
+        "magma",
+        "caravan",
+        "mood_or_stress",
+        "succession_narrative"
+      ],
+      "coding_takeaway": "不要写固定剧情；要让失败链、环境危险和玩家工程事故能自然叠加。",
+      "source_ids": [
+        "G24"
+      ]
+    },
+    {
+      "id": "E03",
+      "name": "金字塔、水泵与血水表演",
+      "summary": "玩家用采矿、冶炼、建筑、泵、水/血流动和神殿设定创造高度个人化的工程艺术。",
+      "systems_involved": [
+        "construction",
+        "material_value",
+        "fluid",
+        "pump",
+        "location_assignment",
+        "ritualized_player_goal"
+      ],
+      "coding_takeaway": "系统应允许玩家把实用机制拼成非实用表达；不要把建筑限制成固定房间模板。",
+      "source_ids": [
+        "G20",
+        "G25"
+      ]
+    },
+    {
+      "id": "E04",
+      "name": "医院与肥皂链",
+      "summary": "中期医疗不是单一按钮，而是一组床、诊断、清洗、手术、缝合、包扎、接骨、牵引、肥皂、桶、水源、布料等资源链。",
+      "systems_involved": [
+        "wounds",
+        "hospital_zone",
+        "healthcare_jobs",
+        "soap_industry",
+        "textiles",
+        "water"
+      ],
+      "coding_takeaway": "复杂系统应做成可分解 pipeline；UI 必须显示缺哪一步。",
+      "source_ids": [
+        "G06"
+      ]
+    },
+    {
+      "id": "E05",
+      "name": "Quickfort / Dreamfort",
+      "summary": "社区通过蓝图工具把完整要塞设计、仓库、房间、工坊、work orders 等结构化复用。",
+      "systems_involved": [
+        "blueprint_dsl",
+        "designation_batch",
+        "layout_preview",
+        "manager_orders",
+        "stockpile_rules"
+      ],
+      "coding_takeaway": "Web 版应把蓝图 DSL 做成一等公民：导入、预览、旋转、差异检查、撤销、版本化。",
+      "source_ids": [
+        "G17",
+        "G18"
+      ]
+    }
+  ],
+  "implementation_backlog": [
+    {
+      "id": "B01",
+      "title": "GuideCorpusSourceCards",
+      "priority": "P0",
+      "description": "把本 JSON 的 source cards 放进项目知识库，供 coding agent 检索。",
+      "acceptance": [
+        "source card has id/title/url/type/use_for/tags",
+        "flow steps reference source IDs",
+        "docs warn old sources are inspirational only"
+      ]
+    },
+    {
+      "id": "B02",
+      "title": "FirstFortressTutorialQuestChain",
+      "priority": "P0",
+      "description": "用 F00-F12 实现从世界创建到基础防御的引导任务链。",
+      "acceptance": [
+        "each tutorial step has player goal",
+        "system preconditions",
+        "success detector",
+        "common cancellation reason",
+        "skip option"
+      ]
+    },
+    {
+      "id": "B03",
+      "title": "EmbarkAdvisor",
+      "priority": "P0",
+      "description": "根据 biome/aquifer/trees/water/soil/minerals/neighbors 生成新手可读的地点建议。",
+      "acceptance": [
+        "flags aquifer risk",
+        "flags evil/savage risk",
+        "scores wood/soil/water/minerals",
+        "shows why a site is recommended"
+      ]
+    },
+    {
+      "id": "B04",
+      "title": "JobReservationAndCancellationReasons",
+      "priority": "P0",
+      "description": "实现间接控制核心：designation 产生 jobs，jobs 预定物品/建筑/位置/劳动力，失败要可解释。",
+      "acceptance": [
+        "jobs reserve resources",
+        "dwarves select eligible jobs",
+        "UI lists why job is suspended/cancelled",
+        "pathfinding failure is distinct from material failure"
+      ]
+    },
+    {
+      "id": "B05",
+      "title": "StockpileRulesAndLogisticsHeatmap",
+      "priority": "P0",
+      "description": "实现专业仓库、过滤器、输入输出距离和搬运可视化。",
+      "acceptance": [
+        "stockpile filters item classes/materials",
+        "refuse/corpse warnings",
+        "workshop input/output proximity advisor",
+        "hauling heatmap"
+      ]
+    },
+    {
+      "id": "B06",
+      "title": "SimplifiedWorkOrders",
+      "priority": "P0",
+      "description": "实现 manager-lite：周期性订单、库存条件、资源阈值、任务展开。",
+      "acceptance": [
+        "orders can repeat",
+        "conditions can AND together",
+        "stocks counted with precision setting",
+        "order failure reason is visible"
+      ]
+    },
+    {
+      "id": "B07",
+      "title": "StoryTraceEventLog",
+      "priority": "P0",
+      "description": "用事件溯源记录人物、物品、材料、位置、伤口、关系和历史原因。",
+      "acceptance": [
+        "every major event has cause links",
+        "entity inspector shows recent events",
+        "postmortem groups events into story beats",
+        "Legends-lite browser filters by actor/site/item"
+      ]
+    },
+    {
+      "id": "B08",
+      "title": "BlueprintDSL",
+      "priority": "P1",
+      "description": "借鉴 Quickfort 思路，设计 Web 原生蓝图格式。",
+      "acceptance": [
+        "supports dig/build/place/zone/stockpile/order layers",
+        "can preview/rotate/undo",
+        "can validate resources/path/accessibility",
+        "can export/import JSON"
+      ]
+    },
+    {
+      "id": "B09",
+      "title": "HospitalPipeline",
+      "priority": "P1",
+      "description": "以中期指南为依据，实现简化医院资源链和治疗阶段。",
+      "acceptance": [
+        "diagnosis creates treatment jobs",
+        "wound state machine visible",
+        "hospital supplies tracked",
+        "soap/water/cloth shortages visible"
+      ]
+    },
+    {
+      "id": "B10",
+      "title": "EmergentStoryRegressionScenarios",
+      "priority": "P1",
+      "description": "把醉猫、洪水、酒馆斗殴、商队路径堵塞、肥皂链缺口等做成测试场景。",
+      "acceptance": [
+        "each scenario has seed/setup",
+        "expected event chain",
+        "expected UI explanation",
+        "no hardcoded narrative text required"
+      ]
+    }
+  ],
+  "coding_prompts": [
+    {
+      "name": "实现新手引导链",
+      "prompt": "Read guide_source_cards G01/G03/G06 and flow steps F00-F12. Implement a tutorial quest chain where each step has goal, prerequisites, success detector, cancellation/failure hints, and optional skip. Do not hardcode Dwarf Fortress names beyond our own data model; use generic colony-sim wording where needed."
+    },
+    {
+      "name": "实现 Embark Advisor",
+      "prompt": "Using flow F01-F03, implement an EmbarkAdvisor that scores a candidate site by aquifer risk, trees, surface water, soil/clay/sand, flux/iron, biome danger, neighbors, and trade access. Return machine-readable warnings and human-readable explanations."
+    },
+    {
+      "name": "实现 Work Order 条件系统",
+      "prompt": "Using G15 and flow F10, implement a simplified WorkOrder model: target item, quantity, repeat cadence, AND conditions, resource-counting query, generated jobs, and failure reasons. The UI should explain why an order is inactive or spam-producing too many jobs."
+    },
+    {
+      "name": "实现事件溯源与故事面板",
+      "prompt": "Using design insights D05-D07 and examples E01-E02, implement EventLog entries with actor/target/location/item/material/cause_event references. Build an inspector that can answer: what happened here, why did this dwarf die, what caused this flood, and what is this item’s history?"
+    },
+    {
+      "name": "实现 Quickfort-like 蓝图",
+      "prompt": "Using G17/G18 and backlog B08, design a JSON blueprint DSL that can describe multi-z-level dig/build/place/zone/stockpile/order commands with preview, validation, rotation, and undo."
+    }
+  ]
+}
