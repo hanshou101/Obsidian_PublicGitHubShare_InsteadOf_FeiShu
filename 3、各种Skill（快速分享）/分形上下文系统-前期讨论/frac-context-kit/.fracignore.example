@@ -1,0 +1,25 @@
+# .fracignore example
+# 极简 glob 规则；不是完整 gitignore。
+# 行尾带 / 表示目录名或目录路径。
+
+# dependencies
+node_modules/
+.venv/
+venv/
+
+# build outputs
+dist/
+build/
+coverage/
+.next/
+.turbo/
+.cache/
+
+# logs and temp
+*.log
+*.tmp
+.DS_Store
+
+# optional: 大型二进制资料可先忽略，改用 sidecar fracnote 摘要
+# *.mp4
+# *.zip

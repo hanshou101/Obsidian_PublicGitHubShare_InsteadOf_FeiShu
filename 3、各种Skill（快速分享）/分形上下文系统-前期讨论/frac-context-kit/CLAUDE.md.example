@@ -1,0 +1,18 @@
+# CLAUDE.md example
+
+When working in this repository, use the `frac-context` skill.
+
+Before editing a file, run the frac chain command for the target path and read the listed `.frac.md` files from root to target.
+
+After editing files, run the frac plan command and update stale `.frac.md` files bottom-up.
+
+Core rule:
+
+```text
+A directory .frac.md summarizes only:
+1. direct eligible files in that directory
+2. immediate child directories' .frac.md files
+```
+
+Do not read grandchildren source files while updating a parent `.frac.md`.
+Do not build a context pack, vector index, repo cognition cache, or knowledge graph.
