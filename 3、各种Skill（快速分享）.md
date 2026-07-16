@@ -30,4 +30,3 @@ titleSize: 1
 isInCallout: false
 ```
 
-
